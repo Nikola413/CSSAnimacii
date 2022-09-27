@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Home</title>
+</head>
+
+<body>
+
+    <header class="generalHeader">
+        <span>Анимации - Пример 4: play-state, timing-function</span>
+    </header>
+
+    <hr>
+
+    <div style="display: flex;">
+        <div class="verticalMenu">
+            <ul>
+                <li><a href="index.html">Дома</a></li>
+                <li><a href="Opsto.html" title="Општо за CSS анимации">Општо за анимации</a></li>
+                <li><a href="Primer1.html" title="Анимација со примена на основните елементи">Пример 1: keyframes, name, duration</a></li>
+                <li><a href="Primer2.html" title="Анимација со примена на delay и fill-mode">Пример 2: delay, fill-mode</a></li>
+                <li><a href="Primer3.html" title="Анимација со примена на direction и iteration-count">Пример 3: direction, iteration-count</a></li>
+                <li><a href="Primer4.html" class="active" title="Анимација со примена на animation-play-state и animation-timing-function">Пример 4: play-state, timing-function</a></li>
+            </ul>
+        </div>
+
+        <div id="content" class="content">
+            <h2>Пример 4: animation-play-state, animation-timing-function</h2>
+            <p>
+                Анимација со употреба на: animation-play-state и animation-timing-function.
+            </p>
+            <ul>
+                <li>
+                    <strong>animation-play-state</strong>: <code>animation-play-state: paused | running | initial | inherit;</code>
+                    <ul>
+                        <li>Одредува дали анимацијата се извршува или е паузирана</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>animation-timing-function</strong>:
+                    <code>
+                        animation-timing-function: linear | ease | ease-in | ease-out | ease-in-out | step-start | step-end | steps(int, start | end) |
+                        cubic-bezier(n, n, n, n) | initial | inherit;
+                    </code>
+                    <ul>
+                        <li>Го одредува забрзувањето на анимацијата низ чекорите</li>
+                        <li>ease: Започнува бавно, потоа забрзува и завршува бавно</li>
+                        <li>linear: Еднаква брзина од почеток до крај</li>
+                        <li>ease-in / ease-out / ease-in-out: Анимација со бавен старт / бавен крај / бавен старт и бавен крај</li>
+                        <li>cubic-bezier(n, n, n, n): Сопствени вредности од 0 до 1 во cubic-bezier функција</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <div class="animation">
+                <div class="animationExplanation">
+                    <p>
+                        <strong>Опис:</strong> Горното лого има вредност ease-in (бавен старт), а долното ease-out (бавен крај).
+                        Кога ќе стигнат до половината на просторот, анимацијата се паузира, а потоа продолжува со враќање на почетната позиција.
+                    </p>
+                    <strong>Употребени стилови и трансформации:</strong>
+                    <ul>
+                        <li><code>translateX(x):</code> Транслација долж x-оската</li>
+                        <li><code>animation-play-state:</code> За паузирање</li>
+                    </ul>
+                </div>
+
+                <div class="animationContainer4">
+                    <div class="primer4_1">
+                        <img src="images/css_logo_EaseIn.png" />
+                    </div>
+                    <div class="primer4_2">
+                        <img src="images/css_logo_EaseOut.png" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="contentBottom">
+                <details>
+                    <summary>HTML/CSS код</summary>
+                    <p>
+
+                        <div class="divHtmlCss">
+                            <table class="html-css-kod">
+                                <tr>
+                                    <th>HTML</th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <pre>
+&lt;div class="animationContainer4"&gt;
+    &lt;div class="primer4_1"&gt;
+        &lt;img src="images/css_logo_EaseIn.png" /&gt;
+    &lt;/div&gt;
+    &lt;div class="primer4_2"&gt;
+        &lt;img src="images/css_logo_EaseOut.png" /&gt;
+    &lt;/div&gt;
+&lt;/div&gt;                     </pre>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table class="html-css-kod">
+                                <tr>
+                                    <th>CSS</th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <pre>
+.animationContainer4:hover &gt; .primer4_1 {
+    animation-name: anim-primer4;
+    animation-duration: var(--anim-duration);
+    animation-timing-function: ease-in;
+}
+
+.animationContainer4:hover &gt; .primer4_2 {
+    animation-name: anim-primer4;
+    animation-duration: var(--anim-duration);
+    animation-timing-function: ease-out;
+}
+
+@keyframes anim-primer4 {
+    0% {
+        transform: translateX(0);
+    }
+    33% {
+        animation-play-state: paused;
+        transform: translateX(calc(var(--anim-width)
+                              - var(--img-width)));
+    }
+    67% {
+        animation-play-state: paused;
+        transform: translateX(calc(var(--anim-width)
+                              - var(--img-width)));
+    }
+    100% {
+        transform: translateX(0);
+    }
+}                            </pre>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                    </p>
+                </details>
+            </div>
+
+        </div>
+    </div>
+
+    <hr>
+
+    <footer class="generalFooter">
+        <div class="generalFooterLeftDiv">
+            <span>CSS анимации</span>
+        </div>
+
+        <div class="generalFooterRightDiv">
+            <span class="desno">Никола Радески</span>
+        </div>
+    </footer>
+
+</body>
+
+</html>
+

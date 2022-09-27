@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Home</title>
+</head>
+
+<body>
+
+    <header class="generalHeader">
+        <span>CSS Анимации - Општо за анимации</span>
+    </header>
+
+    <hr>
+
+    <div style="display: flex;">
+        <div class="verticalMenu">
+            <ul>
+                <li><a href="index.html">Дома</a></li>
+                <li><a href="Opsto.html" title="Општо за CSS анимации" class="active">Општо за анимации</a></li>
+                <li><a href="Primer1.html" title="Анимација со примена на основните елементи">Пример 1: keyframes, name, duration</a></li>
+                <li><a href="Primer2.html" title="Анимација со примена на delay и fill-mode">Пример 2: delay, fill-mode</a></li>
+                <li><a href="Primer3.html" title="Анимација со примена на direction и iteration-count">Пример 3: direction, iteration-count</a></li>
+                <li><a href="Primer4.html" title="Анимација со примена на animation-play-state и animation-timing-function">Пример 4: play-state, timing-function</a></li>
+            </ul>
+        </div>
+
+        <div id="content" class="content">
+            <h2>CSS Анимации</h2>
+            <p>
+                CSS Анимации се ефекти кои овозможуваат да се анимира даден елемент со промена на едно или повеќе својства на елементот.
+                За нив е доволна употребата на HTML и CSS и нема потреба од дополнителен код (на пр. Java Script).
+            </p>
+            <p>За да се изработи една функционална CSS анимација, потребно е дефинирање на:</p>
+            <ol>
+                <li>HTML елемент што ќе се анимира.</li>
+                <li>CSS правила за поврзување на анимацијата со елементот, со задолжително дефинирање на својствата: animation-name и animation-duration.</li>
+                <li>Група од <a class="inner-link" href="Primer1.html">@keyframes</a> правила - интервали во кои се дефинираат клучните моменти за почеток и крај на движењата.</li>
+            </ol>
+            <p>Анимациите можат да се прилагодуваат согласно потребите со примена на некои следните својства:</p>
+            <ul>
+                <li><a class="inner-link" href="Primer2.html">animation-delay:</a> Одлагањето на стартот на анимацијата</li>
+                <li><a class="inner-link" href="Primer3.html">animation-direction:</a> Насоката на движење на елементот</li>
+                <li><a class="inner-link" href="Primer1.html">animation-duration:</a> Времето за кое анимацијата изведува еден циклус</li>
+                <li><a class="inner-link" href="Primer2.html">animation-fill-mode:</a> Стилот на елементот кога анимацијата завршува или пред да започне</li>
+                <li><a class="inner-link" href="Primer3.html">animation-iteration-count:</a> Бројот на повторувања на анимацијата</li>
+                <li><a class="inner-link" href="Primer1.html">animation-name:</a> Називот на еден @keyframe од анимацијата</li>
+                <li><a class="inner-link" href="Primer4.html">animation-play-state:</a> Дали анимацијата да се извршува или да се паузира</li>
+                <li><a class="inner-link" href="Primer4.html">animation-timing-function:</a> Кривата на брзина (забрзување) на анимацијата</li>
+            </ul>
+            <p>
+                Сите овие наброени својства можат да бидат дефинирани во рамки на својството animation, заради заштеда на простор во css датотеката.
+                Значи, сите овие претставуваат под-својства на animation.
+            </p>           
+        </div>
+    </div>
+
+    <hr>
+
+    <footer class="generalFooter">
+        <div class="generalFooterLeftDiv">
+            <span>CSS анимации</span>
+        </div>
+
+        <div class="generalFooterRightDiv">
+            <span class="desno">Никола Радески</span>
+        </div>
+    </footer>
+
+</body>
+
+</html>
+

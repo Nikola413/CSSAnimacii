@@ -1,0 +1,543 @@
+:root {
+    --dark-red: #672312;
+    --red: #bd4628;
+    --site-border-radius: 5px;
+    --code-font-family: ui-monospace,"Cascadia Mono","Segoe UI Mono","Liberation Mono",Menlo,Monaco,Consolas,monospace,"courier new";
+    --anim-duration: 8s;
+    --anim-width: 400px;
+    --img-width: 96px;
+}
+
+html {
+    margin: auto;
+    max-width: 1000px;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI Adjusted","Segoe UI","Liberation Sans",sans-serif,"Helvetica Neue",sans-serif;
+}
+
+/*generalHeader and generalFooter*/
+
+.generalHeader {
+    display: table;
+    width: 100%;
+    margin-top: 8px;
+    height: 30px;
+    border-radius: var(--site-border-radius);
+    color: white;
+    vertical-align: middle;
+    padding-top: 10px;
+    background-image: radial-gradient(circle, var(--red), var(--dark-red));
+}
+
+    .generalHeader span {
+        margin-left: 16px;
+    }
+
+h1, h2 {
+    text-align: center;
+}
+
+.generalHeaderLeftDiv{
+    padding-left: 35px;
+    display: table-cell;
+    width: 40%;
+    letter-spacing: 2px;
+    vertical-align: middle;
+}
+
+.generalHeaderRightDiv{
+    display: table-cell;
+    width: 60%;
+    padding-right: 20px;
+    vertical-align: middle;
+}
+
+.visited {
+    background-color:khaki;
+}
+
+.content {
+    font-size: 16px;
+    line-height: 22px;
+    flex: 4;
+    min-height: 500px;
+    border-radius: var(--site-border-radius);
+}
+
+    .content p {
+        margin-block-start: 0.5em;
+        margin-block-end: 0.5em;
+    }
+
+    .content ul {
+        margin-block-start: 0.2em;
+        margin-block-end: 0.2em;
+        padding-inline-start: 32px;
+    }
+
+.generalFooter {
+    background-image: radial-gradient(circle, var(--red), var(--dark-red));
+    display: table;
+    width: 100%;
+    margin-top: 8px;
+    height: 40px;
+    border-radius: var(--site-border-radius);
+    color: white;
+}
+
+.generalFooterLeftDiv{
+    padding-left: 16px;
+    display: table-cell;
+    width: 40%;
+    vertical-align: middle;
+
+}
+
+.generalFooterRightDiv{
+    display: table-cell;
+    width: 60%;
+    padding-right: 20px;
+    vertical-align: middle;
+}
+
+.desno {
+    float: right;
+}
+
+.contentPocetna {
+    border-radius: var(--site-border-radius);
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    padding-right: 30px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-top: 30px;
+    animation: fadeIn 4s;
+}
+
+.inner-link {
+    text-decoration: none;
+    color: dodgerblue;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.contentLeft {
+    flex: 1;
+}
+
+.contentRight {
+    padding-right: 20px;
+    margin-top: 10px;
+    vertical-align: middle;
+    text-align: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.longButton {
+    width: 190px;
+    float: right;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px 0px 8px 0px;
+    text-align: center;
+    cursor: pointer;
+    background-color: #d79045;
+    color: white;
+    border-radius: var(--site-border-radius);
+}
+
+.verticalMenu {
+    background-color: var(--dark-red);
+    color: white;
+    float: left;
+    margin-right: 10px;
+    border-radius: var(--site-border-radius);
+    flex: 1;
+}
+
+    .verticalMenu ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        background-color: var(--dark-red);
+        border-radius: var(--site-border-radius);
+    }
+
+.verticalMenu li a {
+    display: block;
+    color: white;
+    padding: 8px 10px 8px 10px;
+    text-decoration: none;
+    text-align: left;
+}
+
+    .verticalMenu li a.active {
+        color: khaki;
+    }
+
+    .verticalMenu li a:hover:not(.active) {
+        background-color: #d79045;
+        color: white;
+        border-radius: var(--site-border-radius);
+    }
+
+p {
+    text-align: justify;
+}
+
+.contentBottom {
+    width: 100%;
+    flex: 100%;
+    order: 3;
+}
+
+code {
+    font-family: var(--code-font-family);
+}
+
+details {
+    border: 1px solid #e8e8e8;
+    border-radius: var(--site-border-radius);
+    margin-top: 10px;
+}
+
+    details > summary {
+        font-weight: bold;
+        background-color: whitesmoke;
+        padding: 5px;
+    }
+
+    details[open] {
+        margin-top: 10px;
+    }
+
+        details[open] summary {
+            border-bottom: 1px solid #e8e8e8;
+        }
+
+    details > summary:hover {
+        background-color: #e8e8e8;
+        cursor: pointer;
+    }
+
+    details > p {
+        margin: 0px;
+    }
+
+.divHtmlCss {
+    display: flex;
+}
+
+.html-css-kod {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 12px;
+}
+
+    .html-css-kod td, #html-css-kod th {
+        border: 1px solid #d1d1d1;
+        padding: 8px;
+        vertical-align: top;
+    }
+
+    .html-css-kod th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #9b2c1c;
+        color: white;
+        font-size: 14px;
+        height: 24px;
+    }
+
+    .html-css-kod td {
+        background-color: whitesmoke;
+    }
+
+    .html-css-kod pre {
+        margin-top: 2px;
+        margin-bottom: 2px;
+        font-family: var(--code-font-family);
+    }
+
+    .html-css-kod code {
+        font-family: var(--code-font-family);
+    }
+
+.codeTag {
+    color: #be2f1b;
+}
+
+.codeAtt {
+    color: mediumblue;
+}
+
+.animation {
+    display: flex;
+    margin-top: 8px;
+}
+.animationExplanation {
+    min-height: 200px;
+    flex: 1;
+    text-align: justify;
+    background-color: whitesmoke;
+    border-radius: var(--site-border-radius);
+    border: 1px solid #e8e8e8;
+    font-size: smaller;
+    margin-right: 8px;
+    vertical-align: middle;
+    padding: 4px;
+}
+
+    .animationExplanation ul {
+        margin-block-start: 4px;
+        margin-block-end: 4px;
+        padding-inline-start: 28px;
+    }
+
+    .animationExplanation li {
+        text-align: left;
+    }
+
+.animationContainer {
+    display: flex;
+    height: 200px;
+    width: var(--anim-width);
+    align-items: center;
+    background-color: whitesmoke;
+    border-radius: var(--site-border-radius);
+    border: 1px solid #e8e8e8;
+    margin: 0 auto;
+    float: right;
+    cursor: pointer;
+    background-image: url("images/HoverSmall.png");
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-blend-mode: unset;
+    align-self: center;
+    padding: 4px;
+}
+
+.animationContainer4 {
+    /*display: flex;*/
+    height: 200px;
+    width: var(--anim-width);
+    /*align-items: center;*/
+    background-color: whitesmoke;
+    border-radius: var(--site-border-radius);
+    border: 1px solid #e8e8e8;
+    margin: 0 auto;
+    float: right;
+    cursor: pointer;
+    background-image: url("images/HoverSmall.png");
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-blend-mode: unset;
+    align-self: center;
+    padding: 4px;
+}
+
+#center {
+    padding-left: 40%;
+}
+
+/* --- Primer 1 - start --- */
+.primer1 {
+    width: var(--img-width);
+    height: var(--img-width);
+    z-index: 10;
+    vertical-align: middle;
+    position: relative;
+}
+
+.animationContainer:hover > .primer1 {
+    animation-name: osnovni-elementi;
+    animation-duration: var(--anim-duration);
+}
+
+@keyframes osnovni-elementi {
+    0% {
+        transform: translateX(0);
+    }
+    40% {
+        transform: translateX(calc(var(--anim-width) - var(--img-width))) rotateY(0);
+    }
+    50% {
+        transform: translateX(calc(var(--anim-width) - var(--img-width))) rotateY(180deg);
+    }
+    60% {
+        transform: translateX(calc(var(--anim-width) - var(--img-width))) rotateY(0);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+/* --- Primer 1 - kraj --- */
+
+/* --- Primer 2 - start --- */
+.primer2 {
+    width: var(--img-width);
+    height: var(--img-width);
+    z-index: 10;
+    vertical-align: middle;
+    position: relative;
+}
+
+.animationContainer:hover > .primer2 {
+    animation-name: primer2;
+    animation-duration: var(--anim-duration);
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes primer2 {
+    0% {
+        transform: translateX(0);
+    }
+
+    40% {
+        transform: translateX(calc(var(--anim--width) - var(--img-width))) rotateX(0);
+    }
+
+    50% {
+        transform: translateX(calc(var(--anim-width) - var(--img-width))) rotateX(0);
+    }
+
+    100% {
+        transform: translateX(0) rotateX(360deg);
+        background-color: #672312;
+    }
+}
+/* --- Primer 2 - kraj --- */
+
+/* --- Primer 3 - start --- */
+.primer3 {
+    width: var(--img-width);
+    height: var(--img-width);
+    z-index: 10;
+    vertical-align: middle;
+    position: relative;
+}
+
+.animationContainer:hover > .primer3 {
+    animation-name: primer3;
+    animation-duration: var(--anim-duration);
+    animation-iteration-count: 2;
+    animation-direction: reverse;
+}
+
+@keyframes primer3 {
+    40% {
+        transform: skewX(30deg);
+    }
+
+    50% {
+        transform: scaleX(2);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+/* --- Primer 3 - kraj --- */
+
+/* --- Primer 4 - start --- */
+.primer4_1 {
+    width: var(--img-width);
+    height: var(--img-width);
+    z-index: 10;
+    vertical-align: top;
+    position: relative;
+}
+
+.primer4_2 {
+    width: var(--img-width);
+    height: var(--img-width);
+    z-index: 10;
+    vertical-align: bottom;
+    position: relative;
+}
+
+.animationContainer4:hover > .primer4_1 {
+    animation-name: anim-primer4;
+    animation-duration: var(--anim-duration);
+    animation-timing-function: ease-in;
+}
+
+.animationContainer4:hover > .primer4_2 {
+    animation-name: anim-primer4;
+    animation-duration: var(--anim-duration);
+    animation-timing-function: ease-out;
+}
+
+@keyframes anim-primer4 {
+    0% {
+        transform: translateX(0);
+    }
+    33% {
+        animation-play-state: paused;
+        transform: translateX(calc(var(--anim-width) - var(--img-width)));
+    }
+    67% {
+        animation-play-state: paused;
+        transform: translateX(calc(var(--anim-width) - var(--img-width)));
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+/* --- Primer 4 - kraj --- */
+
+
+@media screen and (max-width: 850px) {
+    .verticalMenu {
+        flex: 1;
+    }
+
+    .content {
+        flex: 3;
+    }
+
+    .animation {
+        display: block;
+    }
+
+    .animationExplanation {
+        min-height: unset;
+    }
+
+    .animationContainer {
+        margin-top: 8px;
+        float: left;
+    }
+
+    .contentBottom {
+        display: inline-block;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    :root {
+        --anim-width: 400px;
+    }
+
+    .divHtmlCss {
+        display: block;
+    }
+}
+

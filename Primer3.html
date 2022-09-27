@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Home</title>
+</head>
+
+<body>
+
+    <header class="generalHeader">
+        <span>Анимации - Пример 3: direction, iteration-count</span>
+    </header>
+
+    <hr>
+
+    <div style="display: flex;">
+        <div class="verticalMenu">
+            <ul>
+                <li><a href="index.html">Дома</a></li>
+                <li><a href="Opsto.html" title="Општо за CSS анимации">Општо за анимации</a></li>
+                <li><a href="Primer1.html" title="Анимација со примена на основните елементи">Пример 1: keyframes, name, duration</a></li>
+                <li><a href="Primer2.html"  title="Анимација со примена на delay и fill-mode">Пример 2: delay, fill-mode</a></li>
+                <li><a href="Primer3.html" class="active" title="Анимација со примена на direction и iteration-count">Пример 3: direction, iteration-count</a></li>
+                <li><a href="Primer4.html" title="Анимација со примена на animation-play-state и animation-timing-function">Пример 4: play-state, timing-function</a></li>
+            </ul>
+        </div>
+
+        <div id="content" class="content">
+            <h2>Пример 3: animation-direction, animation-iteration-count</h2>
+            <p>
+                Анимација со употреба на дополнителни два елементи окрај основните: animation-direction, animation-iteration-count.
+            </p>
+            <ul>
+                <li>
+                    <strong>animation-direction</strong>: <code>animation-direction: normal | reverse | alternate | alternate-reverse | initial | inherit;</code>
+                    <ul>
+                        <li>Специфира во која насока да се одвива анимацијата (нормално, наназад, напред-назад)</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>animation-iteration-count</strong>: <code>animation-iteration-count: number | infinite| initial | inherit;</code>
+                    <ul>
+                        <li>Специфицира колку пати да се повтори анимацијата (или да се иизвршува бесконечно).</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <div class="animation">
+                <div class="animationExplanation">
+                    <p>
+                        <strong>Опис:</strong> Логото се накосува хоризонтално за 30 степени, потоа се зголемува 2 пати по x-оска. Анимацијата со animation-iteration-count се 
+                        повторува 2 пати и се извршува во обратен редослед поради animation-direction: reverse.
+                    </p>
+                    <strong>Употребени стилови и трансформации:</strong>
+                    <ul>
+                        <li><code>skewX(angle):</code> Накосување за некој агол</li>
+                        <li><code>scaleX(number):</code> Зголемување по x-оската</li>
+                    </ul>
+                </div>
+
+                <div class="animationContainer">
+                    <div class="primer3" id="center">
+                        <img src="images/css_logo.png" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="contentBottom">
+                <details>
+                    <summary>HTML/CSS код</summary>
+                    <p>
+
+                        <div class="divHtmlCss">
+                            <table class="html-css-kod">
+                                <tr>
+                                    <th>HTML</th>
+                                </tr>
+                                <tr>
+                                    <td>
+<pre>
+&lt;div class="animationContainer"&gt;
+    &lt;div class="primer3"&gt;
+        &lt;img src="images/css_logo.png" /&gt;
+    &lt;/div&gt;
+&lt;/div&gt;                     </pre>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table class="html-css-kod">
+                                <tr>
+                                    <th>CSS</th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <pre>
+.animationContainer:hover &gt; .primer3 {
+    animation-name: primer3;
+    animation-duration: var(--anim-duration);
+    animation-iteration-count: 2;
+    animation-direction: reverse;
+}
+
+@keyframes primer3 {
+    40% {
+        transform: skewX(30deg);
+    }
+    50% {
+        transform:scaleX(2);        
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                    </p>
+                </details>
+            </div>
+
+        </div>
+    </div>
+
+    <hr>
+
+    <footer class="generalFooter">
+        <div class="generalFooterLeftDiv">
+            <span>CSS анимации</span>
+        </div>
+
+        <div class="generalFooterRightDiv">
+            <span class="desno">Никола Радески</span>
+        </div>
+    </footer>
+
+</body>
+
+</html>
+

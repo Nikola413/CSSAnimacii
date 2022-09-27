@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Home</title>
+</head>
+
+<body>
+
+    <header class="generalHeader">
+        <span>Анимации - Пример 2: delay, fill-mode</span>
+    </header>
+
+    <hr>
+
+    <div style="display: flex;">
+        <div class="verticalMenu">
+            <ul>
+                <li><a href="index.html">Дома</a></li>
+                <li><a href="Opsto.html" title="Општо за CSS анимации">Општо за анимации</a></li>
+                <li><a href="Primer1.html" title="Анимација со примена на основните елементи">Пример 1: keyframes, name, duration</a></li>
+                <li><a href="Primer2.html" class="active" title="Анимација со примена на delay и fill-mode">Пример 2: delay, fill-mode</a></li>
+                <li><a href="Primer3.html" title="Анимација со примена на direction и iteration-count">Пример 3: direction, iteration-count</a></li>
+                <li><a href="Primer4.html" title="Анимација со примена на animation-play-state и animation-timing-function">Пример 4: play-state, timing-function</a></li>
+            </ul>
+        </div>
+
+        <div id="content" class="content">
+            <h2>Пример 2: animation-delay, animation-fill-mode</h2>
+            <p>
+                Анимација со употреба на дополнителни два елементи окрај основните: animation-delay, animation-fill-mode.
+            </p>
+            <ul>
+                <li>
+                    <strong>animation-delay</strong>: <code>animation-delay: time | initial | inherit;</code>
+                    <ul>
+                        <li>Го специфицира времето на доцнење на анимацијата</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>animation-fill-mode</strong>: <code>animation-fill-mode: none | forwards | backwards | both | initial | inherit;</code>
+                    <ul>
+                        <li>Специфицира дали и кога да се задржи некое својство на анимацијата (пред или по завршување на анимацијата).</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <div class="animation">
+                <div class="animationExplanation">
+                    <p>
+                        <strong>Опис:</strong> Логото се движи хоризонтално, потоа ја менува бојата на позадината и
+                         се враќа во првобитната положба ротирајќи околу својата хоризонтална оска. Анимацијата има доцнење од 3s и на крај со animation-fill-mode ја задржува
+                         бојата на позадината.
+                    </p>
+                    <strong>Употребени стилови и трансформации:</strong>
+                    <ul>
+                        <li><code>translateX(x):</code> Транслација долж x-оската</li>
+                        <li><code>rotateX(angle):</code> Ротација околу x-оската</li>
+                    </ul>
+                </div>
+
+                <div class="animationContainer">
+                    <div class="primer2">
+                        <img src="images/css_logo.png" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="contentBottom">
+                <details>
+                    <summary>HTML/CSS код</summary>
+                    <p>
+
+                        <div class="divHtmlCss">
+                            <table class="html-css-kod">
+                                <tr>
+                                    <th>HTML</th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <pre>
+&lt;div class="animationContainer"&gt;
+    &lt;div class="primer2"&gt;
+        &lt;img src="images/css_logo.png" /&gt;
+    &lt;/div&gt;
+&lt;/div&gt;                    </pre>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table class="html-css-kod">
+                                <tr>
+                                    <th>CSS</th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <pre>
+.animationContainer:hover &gt; .primer2 {
+    animation-name: primer2;
+    animation-duration: var(--anim-duration);
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+}
+                                            
+@keyframes primer2 {
+    0% {
+        transform: translateX(0);
+    }
+    40% {
+        transform:translateX(calc(var(--anim-width)
+                             - var(--img-width))) rotateX(0);
+    }
+    50% {
+        transform: translateX(calc(var(--anim-width)
+                              - var(--img-width))) rotateX(0);
+    }
+    100% {
+        transform: translateX(0) rotateX(360deg);
+        background-color: #672312;
+    }
+}                            </pre>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                    </p>
+                </details>
+            </div>
+
+        </div>
+    </div>
+
+    <hr>
+
+    <footer class="generalFooter">
+        <div class="generalFooterLeftDiv">
+            <span>CSS анимации</span>
+        </div>
+
+        <div class="generalFooterRightDiv">
+            <span class="desno">Никола Радески</span>
+        </div>
+    </footer>
+
+</body>
+
+</html>
+
